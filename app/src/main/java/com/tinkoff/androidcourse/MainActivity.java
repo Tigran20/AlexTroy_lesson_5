@@ -3,12 +3,14 @@ package com.tinkoff.androidcourse;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Toast;
 
+import com.tinkoff.androidcourse.diff.WorkersDiffCallback;
 import com.tinkoff.androidcourse.item_touch.SwipeController;
 import com.tinkoff.androidcourse.model.Worker;
 import com.tinkoff.androidcourse.model.WorkerGenerator;
@@ -58,11 +60,6 @@ public class MainActivity extends AppCompatActivity {
         Worker worker = workers.get(position);
         adapter.addItem(position, worker);
         adapter.notifyItemChanged(position);
-    }
-
-    public static void removeItem(int position) {
-        adapter.removeItem(position);
-        adapter.notifyItemRemoved(position);
     }
 
 

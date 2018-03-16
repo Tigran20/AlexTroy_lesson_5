@@ -1,7 +1,7 @@
 package com.tinkoff.androidcourse;
 
 import android.content.Context;
-import android.support.design.widget.FloatingActionButton;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.tinkoff.androidcourse.diff.WorkersDiffCallback;
 import com.tinkoff.androidcourse.model.Worker;
 
 import java.util.List;
@@ -67,19 +68,16 @@ public class WorkerRecyclerAdapter extends RecyclerView.Adapter<WorkerRecyclerAd
         return workers.size();
     }
 
-    public void addItem(int position, Worker worker){
+    public void addItem(int position, Worker worker) {
         this.workers.add(position, worker);
         super.notifyItemInserted(position);
     }
 
-    public void removeItem(int position){
+    public void removeItem(int position) {
         this.workers.remove(position);
         super.notifyItemRemoved(position);
     }
-
-
-    public void onItemMove(int fromPosition, int toPosition){}
-    public void onItemDismiss(int position){}
+    
 
 }
 
