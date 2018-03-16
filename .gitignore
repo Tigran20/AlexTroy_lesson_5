@@ -7,3 +7,6 @@
 /build/
 /captures
 /*/build/
+
+.idea/instapk.xml
+instapk.log*
